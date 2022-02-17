@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Net;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Net.Http;
-using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Shapes;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Collections.Generic;
-using System.Windows.Media.Imaging;
+
 using Newtonsoft.Json;
+
 
 namespace VRCStalker
 {

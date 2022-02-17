@@ -1,8 +1,8 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Windows;
 using WebSocketSharp;
+using Newtonsoft.Json;
+using Microsoft.Toolkit.Uwp.Notifications;
 
 namespace VRCStalker
 {
