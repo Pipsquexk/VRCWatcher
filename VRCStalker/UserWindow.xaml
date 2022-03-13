@@ -8,13 +8,12 @@
         Title="Selected User" Height="450" Width="800">
     <Grid Background="#FF1D1D1D">
         <Label x:Name="userLabel" Content="Selected User: {NULL}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="590" FontSize="24" Foreground="#FFAFAFAF" Background="{x:Null}" Margin="10,10,0,0" Grid.ColumnSpan="3"/>
-        <Rectangle HorizontalAlignment="Left" Height="2" Margin="10,52,0,0" Stroke="#FF525252" VerticalAlignment="Top" Width="780" Fill="#FF676767" Grid.ColumnSpan="3"/>
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="10,52,0,0" Stroke="#FF525252" VerticalAlignment="Top" Width="770" Fill="#FF676767"/>
         <Label x:Name="displayNameLabel" Content=" {NULL}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="38" Width="590" FontSize="20" Foreground="#FFAFAFAF" Background="{x:Null}" Margin="10,52,0,0" Grid.ColumnSpan="3"/>
         <Label x:Name="usernameLabel" Content=" {NULL}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="590" FontSize="17" Foreground="#FFAFAFAF" Background="{x:Null}" Margin="10,73,0,0" Grid.ColumnSpan="3"/>
         <Label x:Name="idLabel" Content=" {NULL}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="590" FontSize="14" Foreground="#FF989898" Background="{x:Null}" Margin="10,91,0,0"/>
         <Label x:Name="statusLabel" Content="Status - {NULL}" HorizontalContentAlignment="Right" HorizontalAlignment="Right" Margin="0,13,10,0" VerticalAlignment="Top" Height="34" Width="239" FontSize="18" Foreground="#FFAFAFAF"/>
-        <Rectangle HorizontalAlignment="Center" Height="2" Margin="0,125,0,0" Stroke="#FF525252" VerticalAlignment="Top" Width="780" Fill="#FF676767"/>
-        <TextBlock x:Name="bioTextBox" HorizontalAlignment="Center" Margin="0,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="292" Width="780" Foreground="#FF989898" FontSize="14"><Run Text="Bio:"/><LineBreak/><Run Text="{}{NULL}"/></TextBlock>
-
+        <Rectangle HorizontalAlignment="Left" Height="2" Margin="10,125,0,0" Stroke="#FF525252" VerticalAlignment="Top" Width="770" Fill="#FF676767"/>
+        <TextBlock x:Name="bioTextBox" HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="292" Width="760" Foreground="#FF989898" FontSize="14"><Run Text="Bio:"/><LineBreak/><Run Text="{}{NULL}"/></TextBlock>
     </Grid>
 </Window>

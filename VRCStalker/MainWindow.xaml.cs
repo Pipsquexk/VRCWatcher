@@ -27,6 +27,8 @@ namespace VRCStalker
 
         public AuthClient apiClient;
 
+        public LoginWindow loginP;
+
         public string authToken = "NULL";
 
         private bool locationChanges = false, statusChanges = false;
@@ -39,20 +41,21 @@ namespace VRCStalker
             selectedUserWindow.Closing += new((e, args) => 
             { 
                 args.Cancel = true; 
-                selectedUserWindow.Hide(); 
+                selectedUserWindow.Hide();
             });
+            Closing += new((e, args) => { loginP.Close(); selectedUserWindow.Close(); });
         }
 
         public void InitMain()
         {
             Instance = this;
             Cache.Init();
-            LoginWindow loginP = new();
+            loginP = new();
             loginP.Show();
             Hide();
         }
 
-        public async void RefreshInfo()
+        public void RefreshInfo()
         {
             vrcSocket = new($"wss://vrchat.com/?authToken={authToken}");
             vrcSocket.OnOpen += VrcSocket_OnOpen;
