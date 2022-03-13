@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Collections.Generic;
 
 using Newtonsoft.Json;
-
+using System.Windows.Controls;
 
 namespace VRCStalker
 {
@@ -29,42 +29,25 @@ namespace VRCStalker
 
         public void Login()
         {
-            string userpass = $"{usernameBox.Text}:{passwordBox.Password}";
-            byte[] userpassBytes = System.Text.Encoding.UTF8.GetBytes(userpass);
-            string basicAuth = Convert.ToBase64String(userpassBytes);
-
-            CookieContainer cookies = new();
-            HttpClientHandler handler = new()
-            {
-                CookieContainer = cookies
-            };
-
-            HttpClient httpsClient = new(handler);
-            Uri reqUri = new("https://vrchat.com/api/1/auth/user?apiKey=JlE5Jldo5Jibnk5O5hTx6XVqsJu4WJ26");
-            httpsClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36 OPR/83.0.4254.46");
-            httpsClient.DefaultRequestHeaders.Add("Authorization", $"Basic {basicAuth}");
-            HttpResponseMessage resp = httpsClient.GetAsync(reqUri).Result;
-
             try
             {
-                IEnumerable<Cookie> cookiess = cookies.GetCookies(reqUri).Cast<Cookie>();
-                string authCookie = cookiess.First().Value;
+                MainWindow.Instance.apiClient = new(usernameBox.Text, passwordBox.Password);
 
-                MainWindow.Instance.authToken = authCookie;
+                if (MainWindow.Instance.apiClient.currentUser == null)
+                {
+                    throw new Exception("Bad login attempt");
+                }
 
-                string username = (string)JsonConvert.DeserializeObject<dynamic>((string)resp.Content.ReadAsStringAsync().Result).username;
-
-                MainWindow.Instance.username = username;
                 MainWindow.Instance.RefreshInfo();
                 MessageBox.Show("Successfully logged into VRChat!");
                 MainWindow.Instance.Show();
-                loggedIn = true;
-                Close();
+                Hide();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Uh oh, something went wrong.\nPlease check your credentials and try to log in again.");
+                MessageBox.Show($"Uh oh, something went wrong.\nPlease check your credentials and try to log in again.\n {ex.ToString()}");
             }
+            
         }
 
         private void Window_Closed(object sender, EventArgs e)

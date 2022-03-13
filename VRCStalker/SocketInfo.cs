@@ -6,10 +6,15 @@
         public string content { get; set; }
     }
 
-    public class SocketContent
+    public class OfflineContent
     {
         public string userId { get; set; }
-        public User user { get; set; }
+    }
+
+    public class LocationContent
+    {
+        public string userId { get; set; }
+        public SocketUser user { get; set; }
         public string location { get; set; }
         public string instance { get; set; }
         public World world { get; set; }
@@ -21,7 +26,7 @@
         public string name { get; set; }
     }
 
-    public class User
+    public class SocketUser
     {
         public string id { get; set; }
         public string username { get; set; }

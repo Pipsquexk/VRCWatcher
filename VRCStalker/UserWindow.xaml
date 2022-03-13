@@ -1,0 +1,14 @@
+﻿<Window x:Class="VRCStalker.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VRCStalker"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800">
+    <Grid Background="#FF1D1D1D">
+        <Label x:Name="userLabel" Content="Selected User: {NULL}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" Width="590" FontSize="24" Foreground="#FFAFAFAF" Background="{x:Null}" Margin="10,10,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="2" Margin="0,52,0,0" Stroke="#FF525252" VerticalAlignment="Top" Width="780" Fill="#FF676767"/>
+
+    </Grid>
+</Window>
