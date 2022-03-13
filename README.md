@@ -18,3 +18,8 @@ Stalk your VRChat friends without opening VRChat
 ![p1](https://user-images.githubusercontent.com/25568473/154481363-fb636367-6a2c-4140-b99c-b867fcfc042c.png)
 
 ![p2](https://user-images.githubusercontent.com/25568473/154481377-231d541b-9796-4d51-8108-e242f39dacf6.png)
+
+
+# Current VRCStalker download count (weirdo count)
+
+[![Stats]("https://www.basementgames.us/Stalkers.php")](https://github.com/Pipsquexk/VRCStalker)
