@@ -78,8 +78,8 @@ namespace VRCStalker
                 img.Width = 60;
                 img.Source = imgB;
 
-                btn.Height = 40;
-                btn.Width = 50;
+                btn.Height = 50;
+                btn.Width = 60;
                 btn.Content = img;
 
                 btn.Click += new((e, args) => 

@@ -5,7 +5,7 @@ namespace VRCStalker.VRCAPI.Auth
     public class PastDisplayName
     {
         public string displayName { get; set; }
-        public string updated_at { get; set; }
+        public DateTime updated_at { get; set; }
     }
 
     public class User
@@ -61,6 +61,35 @@ namespace VRCStalker.VRCAPI.Auth
     }
 
     public class OtherUser
+    {
+        public string id { get; set; }
+        public string username { get; set; }
+        public string displayName { get; set; }
+        public string userIcon { get; set; }
+        public string bio { get; set; }
+        public object[] bioLinks { get; set; }
+        public string profilePicOverride { get; set; }
+        public string statusDescription { get; set; }
+        public string currentAvatarImageUrl { get; set; }
+        public string currentAvatarThumbnailImageUrl { get; set; }
+        public string state { get; set; }
+        public string[] tags { get; set; }
+        public string developerType { get; set; }
+        public DateTime last_login { get; set; }
+        public string last_platform { get; set; }
+        public bool allowAvatarCopying { get; set; }
+        public string status { get; set; }
+        public string date_joined { get; set; }
+        public bool isFriend { get; set; }
+        public string friendKey { get; set; }
+        public DateTime last_activity { get; set; }
+        public string worldId { get; set; }
+        public string instanceId { get; set; }
+        public string location { get; set; }
+
+    }
+
+    public class OtherMUser
     {
         public string id { get; set; }
         public string username { get; set; }

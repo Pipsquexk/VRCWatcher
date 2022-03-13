@@ -29,7 +29,14 @@ namespace VRCStalker
 
         public void RefreshInfo()
         {
+            statusLabel.Content = $"Status - {selectedUser.status}";
+
             userLabel.Content = $"Selected User: {selectedUser.displayName}";
+            displayNameLabel.Content = selectedUser.displayName;
+            usernameLabel.Content = selectedUser.username;
+            idLabel.Content = selectedUser.id;
+
+            bioTextBox.Text = $"Bio:\n{selectedUser.bio}";
         }
     }
 }
