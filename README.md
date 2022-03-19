@@ -15,9 +15,11 @@ Stalk your VRChat friends without opening VRChat
 
 ## Preview
 
-![p1](https://user-images.githubusercontent.com/25568473/154481363-fb636367-6a2c-4140-b99c-b867fcfc042c.png)
+![s1](https://user-images.githubusercontent.com/25568473/159110498-7748b33b-0d63-4230-900f-d0bfd4aff885.PNG)
 
-![p2](https://user-images.githubusercontent.com/25568473/154481377-231d541b-9796-4d51-8108-e242f39dacf6.png)
+![s2](https://user-images.githubusercontent.com/25568473/159110503-89e2976b-fb10-49ae-8e1a-5c0220cbc7ff.PNG)
 
 
 <img src="https://www.basementgames.us/Stalkers.php"/>
+
+
