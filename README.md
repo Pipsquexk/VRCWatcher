@@ -1,6 +1,6 @@
 # VRCStalker
 
-Stalk your VRChat friends without opening VRChat
+Stalk your VRChat friends without opening VRChat.
 
 
 ## Instructions
