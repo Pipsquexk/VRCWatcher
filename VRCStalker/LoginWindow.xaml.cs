@@ -2,11 +2,9 @@
 using System.Net;
 using System.Linq;
 using System.Windows;
-using System.Net.Http;
-using System.Collections.Generic;
 
 using Newtonsoft.Json;
-using System.Windows.Controls;
+
 
 namespace VRCStalker
 {
@@ -20,6 +18,10 @@ namespace VRCStalker
         public LoginWindow()
         {
             InitializeComponent();
+            rememberMe.IsChecked = FileManager.Instance.config.Remember;
+            if (!FileManager.Instance.config.Remember) return;
+            usernameBox.Text = FileManager.Instance.config.Username;
+            passwordBox.Password = FileManager.Instance.config.Password;
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,16 @@ namespace VRCStalker
                 MainWindow.Instance.RefreshInfo();
                 MessageBox.Show("Successfully logged into VRChat!");
                 MainWindow.Instance.Show();
+
+                FileManager.Instance.config.Remember = rememberMe.IsChecked.Value;
+
+                if(rememberMe.IsChecked.Value)
+                {
+                    FileManager.Instance.config.Username = usernameBox.Text;
+                    FileManager.Instance.config.Password = passwordBox.Password;
+                }
+
+                FileManager.Instance.SaveConfig();
                 Hide();
             }
             catch (Exception ex)
@@ -54,5 +66,6 @@ namespace VRCStalker
         {
             if (!loggedIn) Application.Current.Shutdown();
         }
+
     }
 }

@@ -1,13 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
+using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Net.Http;
+using System.Collections.Generic;
+
+using Newtonsoft.Json;
+
 using VRCStalker.VRCAPI.Auth;
+
 
 namespace VRCStalker.VRCAPI
 {
@@ -21,10 +24,7 @@ namespace VRCStalker.VRCAPI
 
         private HttpClient client;
 
-        public AuthClient(string username, string password)
-        {
-            Init(username, password);
-        }
+        public AuthClient(string username, string password) => Init(username, password);
 
         public void Init(string username, string password)
         {

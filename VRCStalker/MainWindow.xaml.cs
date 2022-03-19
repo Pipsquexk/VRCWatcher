@@ -1,15 +1,18 @@
 ﻿using System;
+using System.IO;
+using System.Net;
 using System.Windows;
 using WebSocketSharp;
-using Newtonsoft.Json;
+using System.Windows.Media;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 using Microsoft.Toolkit.Uwp.Notifications;
 
 using VRCStalker.VRCAPI;
-using System.Windows.Controls;
-using System.Net;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using VRCStalker.VRCAPI.Auth;
+
+using Newtonsoft.Json;
+
 
 namespace VRCStalker
 {
@@ -20,7 +23,7 @@ namespace VRCStalker
     {
 
         public static MainWindow Instance;
-
+        
         public UserWindow selectedUserWindow;
 
         public WebSocket vrcSocket;
@@ -30,6 +33,7 @@ namespace VRCStalker
         public LoginWindow loginP;
 
         public string authToken = "NULL";
+        public static string username = "NULL", password = "NULL";
 
         private bool locationChanges = false, statusChanges = false;
 
@@ -49,7 +53,9 @@ namespace VRCStalker
         public void InitMain()
         {
             Instance = this;
-            Cache.Init();
+
+            if (FileManager.Instance == null) return;
+
             loginP = new();
             loginP.Show();
             Hide();
@@ -63,9 +69,12 @@ namespace VRCStalker
             vrcSocket.Connect();
             helloLabel.Content = $"Hello, {apiClient.currentUser.username}";
 
+            locationToggle.IsChecked = FileManager.Instance.config.Location;
+            statusToggle.IsChecked = FileManager.Instance.config.Status;
+
             foreach (Friend frnd in apiClient.friendsList)
             {
-                string path = Utils.CacheImage(string.IsNullOrEmpty(frnd.profilePicOverride) ? frnd.currentAvatarThumbnailImageUrl : frnd.profilePicOverride);
+                string path = FileManager.Instance.CacheImage(string.IsNullOrEmpty(frnd.profilePicOverride) ? frnd.currentAvatarThumbnailImageUrl : frnd.profilePicOverride);
 
                 Uri uPath = new(path);
 
@@ -140,21 +149,29 @@ namespace VRCStalker
         private void locationToggle_Checked(object sender, RoutedEventArgs e)
         {
             locationChanges = true;
+            FileManager.Instance.config.Location = true;
+            FileManager.Instance.SaveConfig();
         }
 
         private void locationToggle_Unchecked(object sender, RoutedEventArgs e)
         {
             locationChanges = false;
+            FileManager.Instance.config.Location = false;
+            FileManager.Instance.SaveConfig();
         }
 
         private void statusToggle_Checked(object sender, RoutedEventArgs e)
         {
             statusChanges = true;
+            FileManager.Instance.config.Status = true;
+            FileManager.Instance.SaveConfig();
         }
 
         private void statusToggle_Unchecked(object sender, RoutedEventArgs e)
         {
             statusChanges = false;
+            FileManager.Instance.config.Status = false;
+            FileManager.Instance.SaveConfig();
         }
     }
 }
