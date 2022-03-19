@@ -61,7 +61,7 @@ namespace VRCStalker
 
             Console.WriteLine(txt);
 
-            string fileLog = $"{time} {txt}";
+            string fileLog = $"[{time}] {txt}";
             LogToFile(fileLog);
         }
 
@@ -81,7 +81,7 @@ namespace VRCStalker
             Console.WriteLine(txt);
             Console.ForegroundColor = ConsoleColor.White;
 
-            string fileLog = $"{time} {txt}";
+            string fileLog = $"[{time}] {txt}\n";
             LogToFile(fileLog);
         }
 
