@@ -2,6 +2,12 @@
 
 Stalk your VRChat friends without opening VRChat.
 
+## Features
+
+- Friends List (WIP)
+- Selected user info
+- Friend location change notifications
+- Friend status change notifications
 
 ## Instructions
 
