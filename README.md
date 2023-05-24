@@ -1,6 +1,6 @@
-# VRCStalker
+# VRCWatcher
 
-Stalk your VRChat friends without opening VRChat.
+Monitor your VRChat friends' activities without opening VRChat.
 
 ## Features
 
