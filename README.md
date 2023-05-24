@@ -1,3 +1,10 @@
+# ❗❗PLEASE NOTE❗❗
+## This repository is no longer actively maintained and there is no guarantee of its return!
+
+</br>
+</br>
+
+
 # VRCWatcher
 
 Monitor your VRChat friends' activities without opening VRChat.
@@ -16,7 +23,7 @@ Monitor your VRChat friends' activities without opening VRChat.
 3. Compile the program if you downloaded source
 4. Run VRCStalker.exe
 5. Log in with your VRChat credentials
-6. Enjoy being a creep?
+6. That's it!
 
 
 ## Preview
